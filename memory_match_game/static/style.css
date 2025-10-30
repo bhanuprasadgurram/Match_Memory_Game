@@ -1,0 +1,74 @@
+body {
+  background: #f0f2f5;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hide dynamically */
+.hidden {
+  display: none !important;
+}
+
+/* --- Game Board --- */
+#board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 15px;
+  max-width: 360px;
+  margin: 20px auto;
+}
+
+.card {
+  height: 80px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 2rem;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+.card.flipped {
+  background: #fff8dc;
+}
+
+.card.matched {
+  background: #d4edda;
+  border: 2px solid #28a745;
+  color: #155724;
+  font-weight: bold;
+}
+
+/* --- Chat messages --- */
+.chat-message {
+  display: flex;
+  margin: 6px 0;
+}
+
+.chat-message.self {
+  justify-content: flex-end;
+}
+
+.chat-bubble {
+  border-radius: 12px;
+  padding: 8px 12px;
+  max-width: 70%;
+  font-size: 0.9rem;
+}
+
+.chat-message.self .chat-bubble {
+  background: #0d6efd;
+  color: #fff;
+}
+
+.chat-message.other .chat-bubble {
+  background: #e9ecef;
+  color: #212529;
+}
